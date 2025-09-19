@@ -1,1 +1,102 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Contract Interface</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.1/ethers.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Smart Contract Interface</h1>
+            <div class="wallet-section">
+                <button id="connectWallet" class="btn btn-primary">Connect Wallet</button>
+                <div id="walletInfo" class="wallet-info hidden">
+                    <span id="walletAddress"></span>
+                    <span id="walletBalance"></span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="status-section">
+                <div id="status" class="status-message">Please connect your wallet to continue</div>
+                <div id="networkInfo" class="network-info hidden">
+                    <span>Network: <span id="currentNetwork"></span></span>
+                </div>
+            </div>
+
+            <div class="contract-section">
+                <div class="card">
+                    <h2>Contract Information</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Contract Address:</label>
+                            <input type="text" id="contractAddress" placeholder="Enter contract address" class="input-field">
+                        </div>
+                        <div class="info-item">
+                            <label>Contract Balance:</label>
+                            <span id="contractBalance">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Read Functions</h2>
+                    <div class="function-group">
+                        <button id="getName" class="btn btn-secondary">Get Name</button>
+                        <button id="getSymbol" class="btn btn-secondary">Get Symbol</button>
+                        <button id="getTotalSupply" class="btn btn-secondary">Get Total Supply</button>
+                        <button id="getBalance" class="btn btn-secondary">Get My Balance</button>
+                    </div>
+                    <div id="readResults" class="results-section"></div>
+                </div>
+
+                <div class="card">
+                    <h2>Write Functions</h2>
+                    <div class="function-group">
+                        <div class="input-group">
+                            <label for="transferTo">Transfer To:</label>
+                            <input type="text" id="transferTo" placeholder="Recipient address" class="input-field">
+                            <label for="transferAmount">Amount:</label>
+                            <input type="number" id="transferAmount" placeholder="Amount" class="input-field">
+                            <button id="transfer" class="btn btn-primary">Transfer</button>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="mintTo">Mint To:</label>
+                            <input type="text" id="mintTo" placeholder="Recipient address" class="input-field">
+                            <label for="mintAmount">Amount:</label>
+                            <input type="number" id="mintAmount" placeholder="Amount" class="input-field">
+                            <button id="mint" class="btn btn-primary">Mint</button>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="approveSpender">Approve Spender:</label>
+                            <input type="text" id="approveSpender" placeholder="Spender address" class="input-field">
+                            <label for="approveAmount">Amount:</label>
+                            <input type="number" id="approveAmount" placeholder="Amount" class="input-field">
+                            <button id="approve" class="btn btn-primary">Approve</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Transaction History</h2>
+                    <div id="transactionHistory" class="transaction-list"></div>
+                </div>
+            </div>
+        </main>
+
+        <div id="loadingOverlay" class="loading-overlay hidden">
+            <div class="loading-spinner"></div>
+            <p>Processing transaction...</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
