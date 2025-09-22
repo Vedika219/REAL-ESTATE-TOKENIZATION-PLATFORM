@@ -1,62 +1,43 @@
-# Flask Configuration
-SECRET_KEY=your-secret-key-here
-FLASK_ENV=development
-FLASK_DEBUG=true
-FLASK_HOST=0.0.0.0
-FLASK_PORT=5000
+# Flask and Web Framework
+Flask==2.3.3
+flask-cors==4.0.0
+Werkzeug==2.3.7
 
-# Web3 Provider Configuration
-# Choose one of the following providers:
-# Infura (recommended)
-WEB3_PROVIDER_URL=https://mainnet.infura.io/v3/YOUR_PROJECT_ID
-INFURA_PROJECT_ID=your_infura_project_id_here
+# Web3 and Blockchain
+web3==6.11.0
+eth-account==0.9.0
+eth-utils==2.3.0
 
-# Alchemy (alternative)
-# WEB3_PROVIDER_URL=https://eth-mainnet.alchemyapi.io/v2/YOUR_API_KEY
-# ALCHEMY_API_KEY=your_alchemy_api_key_here
+# Environment and Configuration
+python-dotenv==1.0.0
 
-# Local development (Ganache/Hardhat)
-# WEB3_PROVIDER_URL=http://localhost:8545
+# HTTP and Requests
+requests==2.31.0
+urllib3==2.0.7
 
-# Network Configuration
-NETWORK_ID=1
-NETWORK_NAME=mainnet
+# Data Processing
+pydantic==2.5.0
 
-# For Sepolia testnet:
-# NETWORK_ID=11155111
-# NETWORK_NAME=sepolia
-# WEB3_PROVIDER_URL=https://sepolia.infura.io/v3/YOUR_PROJECT_ID
+# Async Support (optional)
+aiohttp==3.9.1
 
-# For Polygon mainnet:
-# NETWORK_ID=137
-# NETWORK_NAME=polygon
-# WEB3_PROVIDER_URL=https://polygon-mainnet.infura.io/v3/YOUR_PROJECT_ID
+# Testing (optional)
+pytest==7.4.3
+pytest-flask==1.3.0
 
-# Wallet Configuration (for sending transactions)
-# WARNING: Never commit these values to version control
-PRIVATE_KEY=0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef
-WALLET_ADDRESS=0x742d35Cc6636C0532925a3b8D1FB29C2C1ad4f6C
+# Logging and Monitoring (optional)
+structlog==23.2.0
 
-# Gas Configuration
-GAS_PRICE_GWEI=20
-GAS_LIMIT=300000
+# Database (optional - uncomment if needed)
+# SQLAlchemy==2.0.23
+# Flask-SQLAlchemy==3.1.1
+# psycopg2-binary==2.9.9  # for PostgreSQL
+# redis==5.0.1
 
-# Contract Configuration
-DEFAULT_CONTRACT_ABI_PATH=contracts/abi/
+# Development tools (optional)
+# black==23.11.0
+# flake8==6.1.0
+# pre-commit==3.6.0
 
-# API Configuration
-API_RATE_LIMIT=100/hour
-MAX_CONTENT_LENGTH=16777216
-
-# CORS Configuration
-CORS_ORIGINS=http://localhost:3000,https://yourdapp.com
-
-# External API Keys
-ETHERSCAN_API_KEY=your_etherscan_api_key_here
-
-# Logging Configuration
-LOG_LEVEL=INFO
-LOG_FILE=app.log
-
-# Database Configuration (optional)
-# DATABASE_URL=postgresql://
+# Production WSGI server
+gunicorn==21.2.0
