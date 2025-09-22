@@ -1,3 +1,62 @@
-flask
-web3
-python-dotenv
+# Flask Configuration
+SECRET_KEY=your-secret-key-here
+FLASK_ENV=development
+FLASK_DEBUG=true
+FLASK_HOST=0.0.0.0
+FLASK_PORT=5000
+
+# Web3 Provider Configuration
+# Choose one of the following providers:
+# Infura (recommended)
+WEB3_PROVIDER_URL=https://mainnet.infura.io/v3/YOUR_PROJECT_ID
+INFURA_PROJECT_ID=your_infura_project_id_here
+
+# Alchemy (alternative)
+# WEB3_PROVIDER_URL=https://eth-mainnet.alchemyapi.io/v2/YOUR_API_KEY
+# ALCHEMY_API_KEY=your_alchemy_api_key_here
+
+# Local development (Ganache/Hardhat)
+# WEB3_PROVIDER_URL=http://localhost:8545
+
+# Network Configuration
+NETWORK_ID=1
+NETWORK_NAME=mainnet
+
+# For Sepolia testnet:
+# NETWORK_ID=11155111
+# NETWORK_NAME=sepolia
+# WEB3_PROVIDER_URL=https://sepolia.infura.io/v3/YOUR_PROJECT_ID
+
+# For Polygon mainnet:
+# NETWORK_ID=137
+# NETWORK_NAME=polygon
+# WEB3_PROVIDER_URL=https://polygon-mainnet.infura.io/v3/YOUR_PROJECT_ID
+
+# Wallet Configuration (for sending transactions)
+# WARNING: Never commit these values to version control
+PRIVATE_KEY=0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef
+WALLET_ADDRESS=0x742d35Cc6636C0532925a3b8D1FB29C2C1ad4f6C
+
+# Gas Configuration
+GAS_PRICE_GWEI=20
+GAS_LIMIT=300000
+
+# Contract Configuration
+DEFAULT_CONTRACT_ABI_PATH=contracts/abi/
+
+# API Configuration
+API_RATE_LIMIT=100/hour
+MAX_CONTENT_LENGTH=16777216
+
+# CORS Configuration
+CORS_ORIGINS=http://localhost:3000,https://yourdapp.com
+
+# External API Keys
+ETHERSCAN_API_KEY=your_etherscan_api_key_here
+
+# Logging Configuration
+LOG_LEVEL=INFO
+LOG_FILE=app.log
+
+# Database Configuration (optional)
+# DATABASE_URL=postgresql://
